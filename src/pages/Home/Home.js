@@ -1,13 +1,15 @@
 import React from 'react';
+import bannar from '../../images/hero-img.png';
 
 const Home = () => {
     return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-screen px-16">
     <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src="https://img.freepik.com/free-vector/virtual-influencer-abstract-concept-vector-illustration-influencer-marketing-digital-agency-service-virtual-character-computer-generated-person-social-media-brand-avatar-abstract-metaphor_335657-4171.jpg?w=2000" className="max-w-sm rounded-lg shadow-2xl" />
+        <img src={bannar} className="w-2/4" alt=''/>
         <div>
-            <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <h1 className="text-5xl font-bold">Elegant and creative solutions</h1>
+            <p className="py-6">We are team of talented designers making websites with Bootstrap</p>
+            <button class="btn bg-primary text-white border-none  shadow-2xl hover:bg-secondary">Get Started</button>
         </div>
     </div>
 </div>
