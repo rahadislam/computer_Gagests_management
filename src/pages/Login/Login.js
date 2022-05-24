@@ -28,6 +28,7 @@ const Login = () => {
     }, [user, gUser, from, navigate])
 
     if (loading || gLoading) {
+        return <p>Loading......</p>
     }
 
     if(error || gError){

@@ -7,6 +7,8 @@ import Register from './pages/Login/Register';
 import Myprofile from './pages/Myprofile/Myprofile';
 import RequireAuth from './pages/Login/RequireAuth';
 import Dashbord from './pages/Dashbord/Dashbord';
+import Additems from './pages/Dashbord/Additems';
+import Allitem from './pages/Dashbord/Allitem';
 
 function App() {
   return (
@@ -24,7 +26,10 @@ function App() {
           <RequireAuth>
             <Dashbord></Dashbord>
           </RequireAuth>
-        }></Route>
+        }>
+         <Route index element={<Additems></Additems>}></Route>
+         <Route path='allitem' element={<Allitem></Allitem>}></Route>
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>

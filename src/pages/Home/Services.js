@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <div className="service">
             <h1 className='text-center font-bold text-3xl'>Service</h1>
-        <div className='grid grid-cols-3 gap-10 px-16'>
+        <div className='grid grid-cols-3 gap-5 mx-10'>
             {
                 carts.map(cart=><Card
                     key={cart._id}

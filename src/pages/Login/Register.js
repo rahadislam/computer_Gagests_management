@@ -24,6 +24,7 @@ const Register = () => {
     let RegisterError;
 
     if (loading || gLoading || updating) {
+        return <button class="btn btn-square loading"></button>
 
     }
 

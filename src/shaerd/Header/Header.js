@@ -10,7 +10,8 @@ const Header = () => {
   const handelLogout = () => {
     signOut(auth);
   }
-  return (<div class="navbar bg-base-100 px-16">
+  return (
+  <div class="navbar bg-base-100 lg:px-16">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabIndex="0" class="btn btn-ghost lg:hidden">
