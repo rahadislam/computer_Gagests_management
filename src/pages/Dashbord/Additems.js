@@ -1,30 +1,72 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const Additems = () => {
 
     
     const { register, formState: { errors }, handleSubmit ,reset} = useForm();
+    const imgkey='dee40fb0dbdc793e083e03a4e2908ed3';
     const onSubmit = data => {
-        console.log(data);
-        // const service={
-        //     name:data.name,
-        //     price:data.Price
-        // }
-        // console.log(service);
-        const url = `http://localhost:5000/service`;
+        console.log(data.img[0]);
+        const image = data.img[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imgkey}`;
         fetch(url, {
             method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            body: formData
         })
-        .then(res=> res.json())
+        .then(res=>res.json())
         .then(result =>{
-            console.log(result);
-        } )
-        reset();
+            if(result.success){
+                const img = result.data.url;
+                const addservice = {
+                    name: data.name,
+                    description:data.description,
+                    Quantity:data.Quantity,
+                    minquantity:data.minquantity,
+                    Price:data.Price,
+
+                    img: img
+                }
+                // send to your database 
+                fetch('http://localhost:5000/service', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(addservice)
+                })
+                .then(res =>res.json())
+                .then(inserted =>{
+                    if(inserted.insertedId){
+                        toast.success(' added successfully')
+                        reset();
+                    }
+                    else{
+                        toast.error('Failed to add ');
+                    }
+                })
+
+            }
+            
+        })
+    
+
+        // const url = `http://localhost:5000/service`;
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        // .then(res=> res.json())
+        // .then(result =>{
+        //     console.log(result);
+        // } )
+        // reset();
     }
     return (
         <div className='w-96 mx-auto'>
@@ -126,6 +168,23 @@ const Additems = () => {
                         {errors.Price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.Price.message}</span>}
                         {errors.Price?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.Price.message}</span>}
                     </label>
+                </div>
+                <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Images</span>
+                    </label>
+                    <input
+                        type="file"
+                        placeholder="Price"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("img", {
+                            required: {
+                                value: true,
+                                message: 'Images is required'
+                            }
+                        })}
+                    />
+                    
                 </div>
 
                 <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="ADD NOW" />
