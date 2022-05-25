@@ -7,7 +7,7 @@ const Card = ({cart}) => {
                 <figure class="px-10 pt-10">
                     <img src={cart.img} alt="Shoes" class="rounded-xl h-40 w-60" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body">
                     <h2 class="card-title">{cart.name}</h2>
                     <p>Description:{cart.description}</p>
                     <p>Available Quantity:{cart.Quantity}</p>

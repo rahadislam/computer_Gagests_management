@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import glogo from '../../images/glogo.png'
 import reg from '../../images/register.jpg'
 import { Link, useNavigate } from 'react-router-dom';
+import useJwt from '../../hooks/useJwt';
 
 const Register = () => {
     
@@ -22,6 +23,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     let RegisterError;
+    const [token]=useJwt(user || gUser);
 
     if (loading || gLoading || updating) {
         return <button class="btn btn-square loading"></button>
@@ -32,7 +34,7 @@ const Register = () => {
         RegisterError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-    if (user || gUser) {
+    if (token) {
         navigate('/home');
     }
 

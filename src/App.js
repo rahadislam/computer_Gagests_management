@@ -11,6 +11,7 @@ import Additems from './pages/Dashbord/Additems';
 import Allitem from './pages/Dashbord/Allitem';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllUser from './pages/Dashbord/AllUser';
 
 function App() {
   return (
@@ -31,9 +32,11 @@ function App() {
         }>
          <Route index element={<Additems></Additems>}></Route>
          <Route path='allitem' element={<Allitem></Allitem>}></Route>
+         <Route path='alluser' element={<AllUser></AllUser>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+       
       </Routes>
       <ToastContainer />
     </div>

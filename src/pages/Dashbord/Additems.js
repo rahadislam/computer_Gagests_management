@@ -97,7 +97,7 @@ const Additems = () => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input
+                    <textarea
                         type="text"
                         placeholder="Your description"
                         className="input input-bordered w-full max-w-xs"
@@ -170,13 +170,15 @@ const Additems = () => {
                     </label>
                 </div>
                 <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Images</span>
+                    <label className="label" htmlFor='image'>
+                        <span className="btn btn-outline btn-info capitalize" >Images Upload</span>
                     </label>
-                    <input
+                    <input 
+                    
+                        id='image'                                 
                         type="file"
                         placeholder="Price"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input hidden input-bordered w-full max-w-xs"
                         {...register("img", {
                             required: {
                                 value: true,

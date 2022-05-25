@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import glogo from '../../images/glogo.png'
 import bimg from '../../images/about.png'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import useJwt from '../../hooks/useJwt';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -17,15 +18,16 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     let loginError;
+    const [token]=useJwt(user || gUser)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     useEffect( () =>{
-        if (user || gUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [token, from, navigate])
 
     if (loading || gLoading) {
         return <p>Loading......</p>
