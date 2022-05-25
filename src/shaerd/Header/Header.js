@@ -9,6 +9,7 @@ const Header = () => {
   const [user] = useAuthState(auth);
   const handelLogout = () => {
     signOut(auth);
+    localStorage.removeItem('jwtToken')
   }
   return (
   <div class="navbar bg-base-100 lg:px-16">

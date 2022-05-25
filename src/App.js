@@ -12,6 +12,7 @@ import Allitem from './pages/Dashbord/Allitem';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllUser from './pages/Dashbord/AllUser';
+import Footer from './pages/Footer/Footer';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
        
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );
