@@ -40,6 +40,7 @@ const Header = () => {
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
         {user && <li><Link to='/dashbord'>Dashboard</Link></li>}
+        <li><Link to='/review'>Add Review</Link></li>
         
         <li><Link to='/myprofile'>My Profile</Link></li>
       </ul>

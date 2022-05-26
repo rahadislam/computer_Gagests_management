@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllUser from './pages/Dashbord/AllUser';
 import Footer from './pages/Footer/Footer';
+import Review from './pages/Review/Review';
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
         <Route path='/myprofile' element={
           <RequireAuth>
             <Myprofile></Myprofile>
+          </RequireAuth>
+        }></Route>
+        <Route path='/review' element={
+          <RequireAuth>
+            <Review></Review>
           </RequireAuth>
         }></Route>
         <Route path='/dashbord' element={

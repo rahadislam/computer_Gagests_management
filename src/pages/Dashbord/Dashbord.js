@@ -18,8 +18,8 @@ const Dashbord = () => {
     <ul class="menu p-4 overflow-y-auto w-80 bg-slate-100 text-base-content">
         
       <li><Link to='/dashbord'>Add Items</Link></li>
-      <li><Link to='/dashbord/allitem'>All Items</Link></li>
-      <li><Link to='/dashbord/alluser'>All User</Link></li>
+      <li><Link to='/dashbord/allitem'>ManageItems</Link></li>
+      <li><Link to='/dashbord/alluser'>ManageUser</Link></li>
     </ul>
   
   </div>
