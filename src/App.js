@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AllUser from './pages/Dashbord/AllUser';
 import Footer from './pages/Footer/Footer';
 import Review from './pages/Review/Review';
+import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/myprofile' element={
           <RequireAuth>
             <Myprofile></Myprofile>

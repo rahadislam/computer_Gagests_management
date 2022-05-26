@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Outlet,Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useAdmincheak from '../../hooks/useAdmincheak';
+import dashicon from '../../images/dots-menu.png'
 
 const Dashbord = () => {
   const [user]=useAuthState(auth);
@@ -11,10 +12,9 @@ const Dashbord = () => {
         <div class="drawer drawer-mobile">
   <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col  bg-slate-50 p-5">
+  <label for="my-drawer-2" class="btn w-12 bg-slate-50 border-none drawer-button lg:hidden"><img src={dashicon} alt="" /></label>
             <h1 className='font-bold text-2xl '>Dashbord</h1>
             <Outlet></Outlet>
-            
-    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
     
   
   </div> 
