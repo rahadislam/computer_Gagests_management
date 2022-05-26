@@ -5,13 +5,24 @@ const Users = ({user,refetch}) => {
     const {email,role}=user;
     const handelAdmin=()=>{
         fetch(`http://localhost:5000/user/admin/${email}`,{
-            method:'PUT'
+            method:'PUT',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+            }
         })
-        .then(res=>res.json())
+        .then(res=>{
+          if(res.status === 403){
+              toast.error('You have no power make admin');
+          }
+          return res.json()})
+
         .then(data=>{
-            console.log(data);
+          if(data.modifiedCount > 0){
             refetch();
-            toast.success('Congartulation ! You Successfully admin')
+            toast.success('Congartulation ! You Successfully admin');
+
+          }
+            
         })
 
     }

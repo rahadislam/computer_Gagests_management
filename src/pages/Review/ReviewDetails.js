@@ -12,7 +12,12 @@ const ReviewDetails = () => {
     
     
     useEffect(()=>{
-        fetch('http://localhost:5000/review')
+        fetch('http://localhost:5000/review',{
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+            }
+        })
         .then(res=>res.json())
         .then(data=>{
             setReview(data);

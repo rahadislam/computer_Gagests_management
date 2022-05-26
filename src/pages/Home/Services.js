@@ -4,7 +4,12 @@ import Card from './Card';
 const Services = () => {
     const [carts,setCart]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/service')
+        fetch('http://localhost:5000/service',{
+            method:'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+            }
+        })
         .then(res=>res.json())
         .then(data=>{
             setCart(data)
