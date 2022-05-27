@@ -15,6 +15,7 @@ import AllUser from './pages/Dashbord/AllUser';
 import Footer from './pages/Footer/Footer';
 import Review from './pages/Review/Review';
 import Blogs from './pages/Blogs/Blogs';
+import BuyNow from './pages/Home/BuyNow';
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
         <Route path='/myprofile' element={
           <RequireAuth>
             <Myprofile></Myprofile>
+          </RequireAuth>
+        }></Route>
+        <Route path='/buynow/:id' element={
+          <RequireAuth>
+            <BuyNow></BuyNow>
           </RequireAuth>
         }></Route>
         <Route path='/review' element={

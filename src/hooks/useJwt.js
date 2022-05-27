@@ -15,7 +15,6 @@ const useJwt = (user) => {
             })
             .then(res=>res.json())
             .then(data => {
-                console.log('data inside useToken', data);
                 const accessToken = data.token;
                 localStorage.setItem('jwtToken', accessToken);
                 setToken(accessToken);
