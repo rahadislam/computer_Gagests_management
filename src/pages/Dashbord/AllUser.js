@@ -22,6 +22,7 @@ const AllUser = () => {
               </th>
               <th>Email</th>
               <th>Add Admin</th>
+              <th>Delete Admin</th>
             </tr>
           </thead>
           <tbody>

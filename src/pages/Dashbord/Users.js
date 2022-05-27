@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const Users = ({user,refetch}) => {
-    const {email,role}=user;
+    const {_id,email,role}=user;
     const handelAdmin=()=>{
         fetch(`http://localhost:5000/user/admin/${email}`,{
             method:'PUT',
@@ -26,6 +26,19 @@ const Users = ({user,refetch}) => {
         })
 
     }
+const handelDelete=(_id)=>{
+  fetch(`http://localhost:5000/user/${_id}`,{
+            method: 'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if (data.deletedCount) {
+                toast.success(` is deleted.`)
+                refetch();
+        }
+    })
+}
+
     return (
         
         <tr>
@@ -47,7 +60,10 @@ const Users = ({user,refetch}) => {
                       
                       
                       <th>
-                        <button disabled={role==='admin'} onClick={()=>handelAdmin()} class="btn btn-sm bg-red-600 border-none text-white">Admin</button>
+                        <button disabled={role==='admin'} onClick={()=>handelAdmin()} class="btn btn-sm bg-green-400 border-none text-white capitalize">Admin</button>
+                      </th>
+                      <th>
+                        <button  onClick={()=>handelDelete(_id)} class="btn btn-sm bg-red-600 border-none text-white capitalize">Delete</button>
                       </th>
                     </tr>
     );

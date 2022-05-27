@@ -67,7 +67,7 @@ const Allitem = () => {
                 <td>$ {s.Price}</td>
                 <td>{s.minquantity}</td>
                 <th>
-                  <button onClick={()=>handelDelete(s._id)} class="btn btn-sm bg-red-600 border-none text-white">Delete</button>
+                  <button onClick={()=>handelDelete(s._id)} class="btn btn-sm bg-red-600 border-none text-white capitalize">Delete</button>
                 </th>
               </tr>)
         }
