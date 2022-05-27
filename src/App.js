@@ -17,6 +17,7 @@ import Review from './pages/Review/Review';
 import Blogs from './pages/Blogs/Blogs';
 import BuyNow from './pages/Home/BuyNow';
 import Allorders from './pages/Dashbord/Allorders';
+import Payment from './pages/Dashbord/Payment';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path='additem' element={<Additems></Additems>}></Route>
          <Route index   element={<Allorders></Allorders>}></Route>
          <Route path='allitem' element={<Allitem></Allitem>}></Route>
+         <Route path='payment/:id' element={<Payment></Payment>}></Route>
          
          <Route path='alluser' element={<AllUser></AllUser>}></Route>
         </Route>

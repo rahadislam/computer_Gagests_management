@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Allorders = () => {
@@ -66,7 +67,7 @@ const Allorders = () => {
                         <button onClick={()=>handelDelete(s._id)} class="btn btn-sm bg-red-600 border-none text-white capitalize">Delete</button>
                       </th>
                       <th>
-                        <button onClick={()=>handelDelete(s._id)} class="btn btn-sm bg-teal-400 border-none text-white capitalize">Paymet Now</button>
+                        <Link to={`/dashbord/payment/${s._id}`}  class="btn btn-sm bg-teal-400 border-none text-white capitalize">Paymet Now</Link>
                       </th>
                     </tr>)
               }
