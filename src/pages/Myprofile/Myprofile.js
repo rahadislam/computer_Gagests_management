@@ -1,17 +1,42 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
+import linkedin from '../../images/linkedin.png'
+import project from '../../images/project.png'
+import auth from '../../firebase.init';
+import './Myprofile.css'
 
 const Myprofile = () => {
+    const [user]=useAuthState(auth);
+    const { data: profile, isLoading,refetch} = useQuery('profile', () => fetch('http://localhost:5000/userUpdate').then(res => res.json()));
+    if (isLoading) {
+        return <p>Loading.......</p>
+    }
+    console.log(profile);
     return (
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content flex-col lg:flex-row">
-                <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
-                <div>
-                    <h1 class="text-5xl font-bold">Box Office News!</h1>
-                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button class="btn btn-primary">Get Started</button>
-                </div>
+        <div>
+            {profile.map(p=>
+            <div class="card w-80 bg-base-100 mx-auto my-10 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src={p.img} alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title capitalize">{p.name}</h2>
+              <a href={p.project} >Project: {p.project}</a>
+            <a href={p.linked} >Linked: {p.linked}</a>
+            <p>Location: Noakhali </p>
+            <p>DepartMent: CMT </p>
+              <div class="card-actions">
+                  <Link to='/dashbord/updateprofile' class="btn draw-border capitalize">Update Profile</Link>
+              </div>
             </div>
-        </div>
+          </div>
+            
+                )}
+  
+</div>
+
     );
 };
 
