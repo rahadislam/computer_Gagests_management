@@ -12,6 +12,12 @@ const BuyNow = () => {
     const [user]=useAuthState(auth);
     const { register, formState: { errors }, handleSubmit ,reset} = useForm();
     const [order,setOrder]=useState(0);
+    const orderNum=parseInt(order);
+    const productNum=parseInt(product.minquantity);
+    
+
+    
+    
     const onSubmit=(data)=>{
         
         const orders={
@@ -86,10 +92,10 @@ const BuyNow = () => {
                     />
                     
                     <span><small> {
-                        product.minquantity < order ? '':`Minimum product must order at list ${product.minquantity} !`
+                        productNum < orderNum ? '':`Minimum product must order at list ${product.minquantity} !`
                     }</small></span>
                     
-                    <input disabled={product.minquantity > order}  className='btn btn-primary my-5 w-28  text-white' type="submit"  value="Order" />
+                    <input disabled={productNum > orderNum}  className='btn btn-primary my-5 w-28  text-white' type="submit"  value="Order" />
                     
                 </div>
                     </form>
