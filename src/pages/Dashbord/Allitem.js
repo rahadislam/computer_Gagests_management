@@ -5,14 +5,14 @@ import { toast } from 'react-toastify';
 const Allitem = () => {
 
 
-    const { data: service, isLoading,refetch } = useQuery('service', () => fetch('http://localhost:5000/service').then(res => res.json()));
+    const { data: service, isLoading,refetch } = useQuery('service', () => fetch('https://boiling-ravine-29801.herokuapp.com/service').then(res => res.json()));
     if (isLoading) {
         return <p>Loading.......</p>
     }
 
     const handelDelete=(_id)=>{
         
-        fetch(`http://localhost:5000/service/${_id}`,{
+        fetch(`https://boiling-ravine-29801.herokuapp.com/service/${_id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())

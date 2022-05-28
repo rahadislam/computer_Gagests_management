@@ -9,7 +9,7 @@ import './Myprofile.css'
 
 const Myprofile = () => {
     const [user]=useAuthState(auth);
-    const { data: profile, isLoading,refetch} = useQuery('profile', () => fetch('http://localhost:5000/userUpdate').then(res => res.json()));
+    const { data: profile, isLoading,refetch} = useQuery('profile', () => fetch('https://boiling-ravine-29801.herokuapp.com/userUpdate').then(res => res.json()));
     if (isLoading) {
         return <p>Loading.......</p>
     }

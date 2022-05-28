@@ -4,7 +4,7 @@ import Card from './Card';
 const Services = () => {
     const [carts,setCart]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/service',{
+        fetch('https://boiling-ravine-29801.herokuapp.com/service',{
             method:'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -18,7 +18,7 @@ const Services = () => {
     return (
         <div className="service">
             <h1 className='text-center font-bold text-3xl'>Service</h1>
-        <div className='grid grid-cols-3 gap-5 mx-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mx-10'>
             {
                 carts.map(cart=><Card
                     key={cart._id}

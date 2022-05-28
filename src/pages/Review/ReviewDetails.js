@@ -12,7 +12,7 @@ const ReviewDetails = () => {
     
     
     useEffect(()=>{
-        fetch('http://localhost:5000/review',{
+        fetch('https://boiling-ravine-29801.herokuapp.com/review',{
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -27,7 +27,7 @@ const ReviewDetails = () => {
     return (
         <div className='my-10'>
             <h1 className='text-center font-bold text-3xl my-5'>Our Castomer Reviwes</h1>
-            <div className='grid grid-cols-3 gap-5 mx-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mx-10'>
                 {
                     reviews.map(review=>
                     <div class="card w-80 bg-base-100 shadow-xl">

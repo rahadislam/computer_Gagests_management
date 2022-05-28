@@ -21,7 +21,7 @@ const Review = () => {
             rating:rating,
             description:data.description
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://boiling-ravine-29801.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
