@@ -28,7 +28,7 @@ const BuyNow = () => {
         }
         
         console.log(orders)
-        fetch('https://boiling-ravine-29801.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

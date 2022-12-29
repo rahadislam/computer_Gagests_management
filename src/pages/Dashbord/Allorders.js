@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Allorders = () => {
-    const { data: order, isLoading,refetch } = useQuery('order', () => fetch('https://boiling-ravine-29801.herokuapp.com/order').then(res => res.json()));
+    const { data: order, isLoading,refetch } = useQuery('order', () => fetch('http://localhost:5000/order').then(res => res.json()));
     if (isLoading) {
         return <p>Loading.......</p>
     }
 
     const handelDelete=(_id)=>{
         
-        fetch(`https://boiling-ravine-29801.herokuapp.com/order/${_id}`,{
+        fetch(`http://localhost:5000/order/${_id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())

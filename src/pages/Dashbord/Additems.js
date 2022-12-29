@@ -31,7 +31,7 @@ const Additems = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('https://boiling-ravine-29801.herokuapp.com/service', {
+                fetch('http://localhost:5000/service', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -54,7 +54,7 @@ const Additems = () => {
         })
     
 
-        // const url = `https://boiling-ravine-29801.herokuapp.com/service`;
+        // const url = `http://localhost:5000/service`;
         // fetch(url, {
         //     method: 'POST',
         //     headers: {

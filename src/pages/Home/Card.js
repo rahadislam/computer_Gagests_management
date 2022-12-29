@@ -1,14 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+import { BsFillArrowDownCircleFill } from 'react-icons/bs';
 
 const Card = ({cart}) => {
 
     return (
-            <div class="card w-80 bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={cart.img} alt="Shoes" class="rounded-xl h-40 w-60" />
+            <div class="card w-11/12 bg-base-100 shadow-2xl mb-5">
+                {/* <div className=' w-20 border-green-400 rounded-full border-2 m-5 text-center  text-green-500'>
+                    <span>Sale</span>
+                </div> */}
+                <figure class="">
+                    <img src={cart.img} alt="Shoes" class="h-60" />
                 </figure>
-                <div class="card-body">
+                <div className='p-5'>
+                    <span className='font-medium text-slate-400'>${cart.Price} USD</span>
+                    <h1 className='font-medium text-xl'>{cart.name}</h1>
+                    <div className="flex items-center gap-3">
+                        <div className='w-1/2'>
+                        <span className='flex items-center text-slate-600'><BsFillArrowUpCircleFill className='mr-2 text-red-500'></BsFillArrowUpCircleFill> Minimum : {cart.minquantity} Pis</span>
+                        
+                        </div>
+
+                        <div>
+                        <span className='flex items-center'><BsFillArrowDownCircleFill className='mr-2 text-green-500'></BsFillArrowDownCircleFill> Available :{cart.Quantity}</span>
+                        </div>
+                        
+                        
+                        {/* BsFillArrowDownCircleFill */}
+                    </div>
+                    <div className='flex flex-row-reverse'>
+                    <Link class="mt-3 btn btn-sm text-white bg-green-500 border-none hover:bg-green-600 text-right" to={`/buynow/${cart._id}`}>Buy Now</Link>
+                    </div>
+                    
+                </div>
+                {/* <div class="card-body">
                     <h2 class="card-title">{cart.name}</h2>
                     <p>Description:{cart.description}</p>
                     <p>Available Quantity:{cart.Quantity}</p>
@@ -17,7 +43,7 @@ const Card = ({cart}) => {
                     <div class="card-actions">
                         <Link class="btn btn-primary" to={`/buynow/${cart._id}`}>Buy Now</Link>
                     </div>
-                </div>
+                </div> */}
             </div>
     );
 };

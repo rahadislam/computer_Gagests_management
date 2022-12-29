@@ -27,7 +27,7 @@ const Updatprofile = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('https://boiling-ravine-29801.herokuapp.com/userUpdate', {
+                fetch('http://localhost:5000/userUpdate', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

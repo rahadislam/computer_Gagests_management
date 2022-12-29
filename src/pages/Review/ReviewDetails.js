@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import profile from '../../images/profile.png'
+import profile from '../../images/profile.png';
+import { AiOutlineStar } from 'react-icons/ai';
 
 const ReviewDetails = () => {
     const [reviews,setReview]=useState([]);
@@ -12,7 +13,7 @@ const ReviewDetails = () => {
     
     
     useEffect(()=>{
-        fetch('https://boiling-ravine-29801.herokuapp.com/review',{
+        fetch('http://localhost:5000/review',{
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -26,14 +27,17 @@ const ReviewDetails = () => {
 
     return (
         <div className='my-10'>
-            <h1 className='text-center font-bold text-3xl my-5'>Our Castomer Reviwes</h1>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mx-10'>
+            <h1 className='text-center text-3xl py-5 pb-10 '><span className='border-green-500 rounded border-b-4 '>
+            <span className='text-4xl text-green-500 font-medium '>Our C</span>astomer Reviwes
+                </span></h1>
+           
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 w-10/12 mx-auto  pt-10'>
                 {
                     reviews.map(review=>
-                    <div class="card w-80 bg-base-100 shadow-xl">
+                    <div class="card w-11/12 bg-base-100 shadow-2xl mb-10">
                     <div class="card-body">
-                    { <div class={`avatar ${!review.img ? "offline" : "online"} mx-3`} >
-                        <div class="w-12 rounded-full">
+                    { <div class='avatar mx-3 ' >
+                        <div class="w-12 rounded-full mx-auto border-2 border-green-400 drop-shadow-xl">
 
                             <img src={!review.img ? profile : review.img} alt='' />
                         </div>
@@ -42,9 +46,16 @@ const ReviewDetails = () => {
 
 
 
-                        <h2 class="card-title">{review.name}</h2>
-                        <p>{review.description}</p>
-                        <p className='font-bold'>Rating:{review.rating}</p>
+                        <h2 class="text-center text-xl font-medium">{review.name}</h2>
+                        <p className='text-center text-slate-400'>{review.description}</p>
+                        {/* <p className='font-bold'>Rating:{review.rating}</p> */}
+                        <div className='flex justify-center'>
+                            <span><AiOutlineStar className='text-yellow-500'></AiOutlineStar></span>
+                            <span><AiOutlineStar className='text-yellow-500'></AiOutlineStar></span>
+                            <span><AiOutlineStar className='text-yellow-500'></AiOutlineStar></span>
+                            <span><AiOutlineStar className='text-yellow-500'></AiOutlineStar></span>
+                            <span><AiOutlineStar className='text-yellow-500'></AiOutlineStar></span>
+                        </div>
                         
                        {/* {
                             stars.map((_,index)=><p>hello</p>)
