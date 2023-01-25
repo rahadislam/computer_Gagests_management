@@ -5,8 +5,11 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Useproduct from '../../hooks/Useproduct';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+import { BsFillArrowDownCircleFill } from 'react-icons/bs';
 
 const BuyNow = () => {
+   
     const { id } = useParams();
     const [product] = Useproduct(id);
     const [user] = useAuthState(auth);
@@ -114,7 +117,7 @@ const BuyNow = () => {
 
                     <div class=" w-screen h-screen bg-white">
 
-                        <div class="container  my-4 px-4 lg:px-20">
+                        <div class="container  my-4 px-4 lg:px-16">
 
                             <div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
                                 <div class="flex">
@@ -150,8 +153,32 @@ const BuyNow = () => {
                 </form>
 
             </div>
-            <div className=''>
-              
+            <div className='my-10 ml-10 flex '>
+                
+                <img src={product.img} alt="" class="w-36 h-36" />
+
+                <div className='pl-5'>
+                    <h1 className='text-3xl'>{product.name}</h1>
+                    <p className='text-xs py-3 '>{product.description}</p>
+                    <div className="flex items-center gap-3">
+                    <div className='w-1/2'>
+                        <span className='flex items-center text-slate-600'><BsFillArrowUpCircleFill className='mr-2 text-red-500'></BsFillArrowUpCircleFill> min:{product.minquantity} </span>
+
+                    </div>
+
+                    <div>
+                        <span className='flex items-center'><BsFillArrowDownCircleFill className='mr-2 text-green-500'></BsFillArrowDownCircleFill> Qty:{product.Quantity}
+                        </span>
+                    </div>
+
+
+
+                </div>
+
+                </div>
+
+                
+           
             </div>
         </div>
     );
