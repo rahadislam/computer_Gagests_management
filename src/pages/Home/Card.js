@@ -7,9 +7,7 @@ const Card = ({cart}) => {
 
     return (
             <div class="card w-11/12 bg-base-100 shadow-2xl mb-5">
-                {/* <div className=' w-20 border-green-400 rounded-full border-2 m-5 text-center  text-green-500'>
-                    <span>Sale</span>
-                </div> */}
+              
                 <figure class="">
                     <img src={cart.img} alt="Shoes" class="h-60" />
                 </figure>
@@ -27,23 +25,14 @@ const Card = ({cart}) => {
                         </div>
                         
                         
-                        {/* BsFillArrowDownCircleFill */}
+                       
                     </div>
                     <div className='flex flex-row-reverse'>
                     <Link class="mt-3 btn btn-sm text-white bg-green-500 border-none hover:bg-green-600 text-right" to={`/buynow/${cart._id}`}>Buy Now</Link>
                     </div>
                     
                 </div>
-                {/* <div class="card-body">
-                    <h2 class="card-title">{cart.name}</h2>
-                    <p>Description:{cart.description}</p>
-                    <p>Available Quantity:{cart.Quantity}</p>
-                    <p>Minimum Quantity:{cart.minquantity}</p>
-                    <p>Price:{cart.Price} $</p>
-                    <div class="card-actions">
-                        <Link class="btn btn-primary" to={`/buynow/${cart._id}`}>Buy Now</Link>
-                    </div>
-                </div> */}
+               
             </div>
     );
 };

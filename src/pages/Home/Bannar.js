@@ -8,7 +8,7 @@ const Bannar = () => {
         <img src={bannar} className="w-2/4" alt=''/>
         <div>
             <h1 className="text-5xl font-bold">Elegant and creative solutions</h1>
-            <p className="py-6">We are team of talented designers making websites with Bootstrap</p>
+            <p className="py-6">We are team Elegant and creative solutions </p>
             <button class="btn bg-primary text-white border-none  shadow-2xl hover:bg-secondary">Get Started</button>
         </div>
     </div>

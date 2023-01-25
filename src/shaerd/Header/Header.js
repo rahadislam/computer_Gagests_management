@@ -24,7 +24,7 @@ const Header = () => {
             {user && <li><Link to='/dashbord'>Dashboard</Link></li>}
             <li><Link to='/review'>Add Review</Link></li>
 
-            <li><Link to='/myprofile'>My Profile</Link></li>
+            
           </ul>
         </div>
         <a class="normal-case text-xl">BLC IT</a>
@@ -34,9 +34,9 @@ const Header = () => {
           <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2'  to='/home'>Home</Link></li>
           <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/blogs'>Blogs</Link></li>
           {user && <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/dashbord'>Dashboard</Link></li>}
-          <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/review'>Add Review</Link></li>
+          <li><Link className='text-lg  hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/review'>Add Review</Link></li>
 
-          <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/myprofile'>My Profile</Link></li>
+      
         </ul>
       </div>
       <div class="navbar-end">

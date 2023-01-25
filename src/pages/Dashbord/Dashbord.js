@@ -23,7 +23,7 @@ const Dashbord = () => {
     <ul class="menu p-4 overflow-y-auto w-80 bg-slate-100 text-base-content">
         
       <li><Link to='/dashbord'>All Orders</Link></li>
-      <li><Link to='/dashbord/updateprofile'>Update Profile</Link></li>
+      {/* <li><Link to='/dashbord/updateprofile'>Update Profile</Link></li> */}
       {admin && <li><Link to='/dashbord/additem'>Add Items</Link></li>}
       { admin && <li><Link to='/dashbord/allitem'>ManageItems</Link></li>}
       {
