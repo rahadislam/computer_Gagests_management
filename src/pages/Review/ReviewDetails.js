@@ -13,7 +13,7 @@ const ReviewDetails = () => {
     
     
     useEffect(()=>{
-        fetch('http://localhost:5000/review',{
+        fetch('https://computer-management.up.railway.app//review',{
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`

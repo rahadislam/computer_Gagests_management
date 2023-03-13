@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const Users = ({user,refetch}) => {
     const {_id,email,role}=user;
     const handelAdmin=()=>{
-        fetch(`http://localhost:5000/user/admin/${email}`,{
+        fetch(`https://computer-management.up.railway.app//user/admin/${email}`,{
             method:'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -27,7 +27,7 @@ const Users = ({user,refetch}) => {
 
     }
 const handelDelete=(_id)=>{
-  fetch(`http://localhost:5000/user/${_id}`,{
+  fetch(`https://computer-management.up.railway.app//user/${_id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())

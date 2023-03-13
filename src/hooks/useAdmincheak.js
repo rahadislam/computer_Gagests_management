@@ -5,7 +5,7 @@ const useAdmincheak = user => {
     useEffect( () =>{
         const email = user?.email;
         if(email){
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://computer-management.up.railway.app//admin/${email}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',
