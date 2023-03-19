@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Allorders = () => {
-    const { data: order, isLoading,refetch } = useQuery('order', () => fetch('https://computer-management.up.railway.app//order').then(res => res.json()));
+    const { data: order, isLoading,refetch } = useQuery('order', () => fetch('https://computer-management.up.railway.app/order').then(res => res.json()));
     if (isLoading) {
         return <p>Loading.......</p>
     }
 
     const handelDelete=(_id)=>{
         
-        fetch(`https://computer-management.up.railway.app//order/${_id}`,{
+        fetch(`https://computer-management.up.railway.app/order/${_id}`,{
             method: 'DELETE'
         })
         .then(res=>res.json())

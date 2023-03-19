@@ -22,7 +22,7 @@ import Updatprofile from './pages/Dashbord/Updatprofile';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ fontFamily: 'Lato' }}>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

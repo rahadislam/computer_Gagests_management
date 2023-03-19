@@ -27,7 +27,7 @@ const Updatprofile = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('https://computer-management.up.railway.app//userUpdate', {
+                fetch('https://computer-management.up.railway.app/userUpdate', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

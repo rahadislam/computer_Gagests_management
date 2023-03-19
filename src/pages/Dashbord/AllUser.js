@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Users from './Users';
 
 const AllUser = () => {
-    const { data: users, isLoading,refetch} = useQuery('user', () => fetch('https://computer-management.up.railway.app//user').then(res => res.json()));
+    const { data: users, isLoading,refetch} = useQuery('user', () => fetch('https://computer-management.up.railway.app/user').then(res => res.json()));
     if (isLoading) {
         return <p>Loading.......</p>
     }

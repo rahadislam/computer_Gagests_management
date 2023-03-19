@@ -4,7 +4,7 @@ import Card from './Card';
 const Services = () => {
     const [carts, setCart] = useState([]);
     useEffect(() => {
-        fetch('https://computer-management.up.railway.app//service', {
+        fetch('https://computer-management.up.railway.app/service', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -17,8 +17,8 @@ const Services = () => {
     }, [])
     return (
         <div className="service ">
-            <h1 className='text-center text-3xl py-5 pb-10 '><span className='border-green-500 rounded border-b-4 '>
-                <span className='text-4xl text-green-500 font-medium '>Our S</span>ervice
+            <h1 className='text-center text-3xl font-bold  py-5 pb-10 '><span className=' '>
+                <span className=''>Our S</span>ervice
             </span></h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 w-10/12 mx-auto py-10'>
                 {

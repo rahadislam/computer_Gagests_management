@@ -13,7 +13,7 @@ const ReviewDetails = () => {
     
     
     useEffect(()=>{
-        fetch('https://computer-management.up.railway.app//review',{
+        fetch('https://computer-management.up.railway.app/review',{
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -27,8 +27,8 @@ const ReviewDetails = () => {
 
     return (
         <div className='my-10'>
-            <h1 className='text-center text-3xl py-5 pb-10 '><span className='border-green-500 rounded border-b-4 '>
-            <span className='text-4xl text-green-500 font-medium '>Our C</span>astomer Reviwes
+            <h1 className='text-center font-bold  text-3xl py-5 pb-10 '><span className=''>
+            <span className=''>Our C</span>astomer Reviwes
                 </span></h1>
            
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 w-10/12 mx-auto  pt-10'>

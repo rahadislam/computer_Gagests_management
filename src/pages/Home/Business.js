@@ -7,7 +7,7 @@ import feedback from '../../images/feedback.png'
 const Business = () => {
     return (
         <div className='py-10'>
-            <h1 className='text-3xl text-center pb-10'><span className='border-green-500 rounded border-b-4 '><span className='text-4xl text-green-500 font-medium'>Our B</span>usiness </span></h1>
+            <h1 className='text-3xl font-bold  text-center pb-10'><span className=''><span className=''>Our B</span>usiness </span></h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-10'>
                 <div className='h-30 w-30 mx-auto'>
                     <img className='h-16 w-16' src={country} alt="" />

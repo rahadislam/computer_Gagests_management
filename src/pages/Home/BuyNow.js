@@ -30,7 +30,7 @@ const BuyNow = () => {
 
         }
 
-        fetch('https://computer-management.up.railway.app//order', {
+        fetch('https://computer-management.up.railway.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

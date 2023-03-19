@@ -21,7 +21,7 @@ const Review = () => {
             rating:rating,
             description:data.description
         }
-        fetch('https://computer-management.up.railway.app//review', {
+        fetch('https://computer-management.up.railway.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

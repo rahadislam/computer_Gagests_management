@@ -31,7 +31,7 @@ const Additems = () => {
                     img: img
                 }
                 // send to your database 
-                fetch('https://computer-management.up.railway.app//service', {
+                fetch('https://computer-management.up.railway.app/service', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -54,7 +54,7 @@ const Additems = () => {
         })
     
 
-        // const url = `https://computer-management.up.railway.app//service`;
+        // const url = `https://computer-management.up.railway.app/service`;
         // fetch(url, {
         //     method: 'POST',
         //     headers: {
