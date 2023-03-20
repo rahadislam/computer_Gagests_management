@@ -8,7 +8,7 @@ const IntoArea = () => {
     return (
         <div className='py-10'>
         <h1 className='text-3xl text-center font-bold'>Our Company Provider</h1>
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-5 py-10'>
+        <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 py-10'>
             <div className='h-30 w-30 mx-auto'>
                 <img className='h-24 w-24' src={it1} alt="" />
                 

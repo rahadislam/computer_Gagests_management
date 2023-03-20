@@ -19,6 +19,7 @@ import BuyNow from './pages/Home/BuyNow';
 import Allorders from './pages/Dashbord/Allorders';
 import Payment from './pages/Dashbord/Payment';
 import Updatprofile from './pages/Dashbord/Updatprofile';
+import Allservice from './pages/Allservice/Allservice';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>  
+        <Route path='/services' element={<Allservice></Allservice>}></Route>  
         <Route path='/myprofile' element={
           <RequireAuth>
             <Myprofile></Myprofile>

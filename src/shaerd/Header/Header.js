@@ -3,7 +3,9 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-import avatar from '../../images/avatar.jpg'
+import avatar from '../../images/avatar.jpg';
+import logo from '../../images/headlogo.png';
+
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -21,18 +23,20 @@ const Header = () => {
           <ul tabIndex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li ><Link  to='/home'>Home</Link></li>
             <li><Link to='/blogs'>Blogs</Link></li>
+            <li><Link to='/services'>Services</Link></li>
             {user && <li><Link to='/dashbord'>Dashboard</Link></li>}
             <li><Link to='/review'>Add Review</Link></li>
 
             
           </ul>
         </div>
-        <a class="normal-case text-xl">BLC IT</a>
+        <a  class="normal-case text-xl"><img className='w-44' src={logo} alt="" /></a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="flex items-center ">
           <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2'  to='/home'>Home</Link></li>
           <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/blogs'>Blogs</Link></li>
+          <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/services'>Services</Link></li>
           {user && <li><Link className='text-lg hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/dashbord'>Dashboard</Link></li>}
           <li><Link className='text-lg  hover:border-b-4 hover:border-green-500 rounded px-5 py-2' to='/review'>Add Review</Link></li>
 
